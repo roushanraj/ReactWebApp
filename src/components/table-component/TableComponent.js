@@ -40,6 +40,11 @@ export class TableComponent extends Component {
         return keys;
     }
 
+    setColor(marks){
+        if (marks > 70) return "red";
+        return '';
+    }
+
     render() {
         const { loadingFlag, errorFlag } = this.state;
 
@@ -65,7 +70,7 @@ export class TableComponent extends Component {
                 </thead>
                 {this.state.result1.map(el => (
                   <tbody>
-                    <tr>
+                    <tr style={{ color: this.setColor(el.percentage) }}>
                         <td>{el.name}</td>
                         <td>{el.rollNo}</td>
                         <td>{el.standard}</td>
