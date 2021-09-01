@@ -1,8 +1,8 @@
 import './App.css';
 import { BrowserRouter, Route, Link } from 'react-router-dom';
 import { TableComponent } from './table-component/TableComponent';
-import { BarChart } from './bar-chart-component/BarChart';
-import { PieChart } from './pie-chart-component/PieChart';
+import { BarChartComponent } from './bar-chart-component/BarChart';
+import { PieChartComponent } from './pie-chart-component/PieChart';
 import { Component } from 'react';
 
 
@@ -29,8 +29,8 @@ export class App extends Component{
 
 
    <Route exact path="/" component= {TableComponent}></Route>
-   <Route path="/bar-chart" component= {BarChart}></Route>
-   <Route path="/pie-chart" component= {PieChart}></Route>
+   <Route path="/bar-chart" component= {BarChartComponent}></Route>
+   <Route path="/pie-chart" component= {PieChartComponent}></Route>
   </BrowserRouter>
     </div>
   );

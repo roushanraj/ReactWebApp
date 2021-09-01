@@ -68,13 +68,13 @@ export class TableComponent extends Component {
                         {this.getHead().map(head => <th>{head}</th>)}
                     </tr>
                 </thead>
-                {this.state.result1.map(el => (
+                {this.state.result1.map(resultlist => (
                   <tbody>
-                    <tr style={{ color: this.setColor(el.percentage) }}>
-                        <td>{el.name}</td>
-                        <td>{el.rollNo}</td>
-                        <td>{el.standard}</td>
-                        <td>{el.percentage}</td>
+                    <tr style={{ color: this.setColor(resultlist.percentage) }}>
+                        <td>{resultlist.name}</td>
+                        <td>{resultlist.rollNo}</td>
+                        <td>{resultlist.standard}</td>
+                        <td>{resultlist.percentage}</td>
                     </tr>
                     </tbody>
                 ))}
