@@ -11,7 +11,7 @@ export class App extends Component{
   {
   return (
     <div className="App">
-      <h1>Roushan</h1>
+      <h1>XYZ School Info</h1>
       <BrowserRouter>
       
       <ul>

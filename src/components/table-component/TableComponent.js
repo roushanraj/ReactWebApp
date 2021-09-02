@@ -61,7 +61,7 @@ export class TableComponent extends Component {
         }
 
         return <div>
-            <h1>This is the result Table</h1>
+            <h4>This is the result Table</h4>
             <table class="center" border="1">
             <thead>
                     <tr>

@@ -2,7 +2,7 @@
 
 import axios from "axios";
 import React from "react";
-import { PieChart, Pie, Cell, Tooltip, Legend } from 'recharts';
+import { PieChart, Pie, Cell, Tooltip, Legend, LabelList } from 'recharts';
 
 
 export class PieChartComponent extends React.Component {
@@ -19,32 +19,23 @@ export class PieChartComponent extends React.Component {
     COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#AF19FF'];
 
 
-    CustomTooltip = ({ active, payload }) => {
-        if (active) {
-            return (
-                <div className="custom-tooltip" style={{ backgroundColor: '#ffff', padding: '5px', border: '1px solid #cccc' }}>
-                    <label>{`${payload[0].aspect} : ${payload[0].expense}%`}</label>
-                </div>
-            );
-        }
-
-        return null;
-    };
-
-  
-
-
     render() {
         return (
-            <PieChart width={730} height={300}>
-                <Pie data={this.state.results} color="#000000" dataKey="expense" nameKey="aspect" cx="50%" cy="50%" outerRadius={120} fill="#8884d8" >
-                    {
-                        this.state.results.map((entry, index) => <Cell key={`cell-${index}`} fill={this.COLORS[index % this.COLORS.length]} />)
-                    }
-                </Pie>
-                <Tooltip content={<this.CustomTooltip />} />
-                <Legend />
-            </PieChart>
+            <div class="center">
+                <PieChart  width={1030} height={400}>
+                    <Pie data={this.state.results} color="#000000" dataKey="expense" nameKey="aspect" cx="50%" cy="50%" outerRadius={160} fill="#8884d8" >
+
+                        {
+                            this.state.results.map((entry, index) => <Cell key={`cell-${index}`} fill={this.COLORS[index % this.COLORS.length]} />)
+                        }
+                        <LabelList dataKey="expense" position="top" />
+                    </Pie>
+                    
+                    <Tooltip  />
+                    <Legend align="center" />
+                </PieChart>
+                <h5 align="left">Note! Figures in Thousand INR.</h5>
+            </div>
         )
     };
 }
