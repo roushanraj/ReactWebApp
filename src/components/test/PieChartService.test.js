@@ -12,6 +12,6 @@ data: [
 mockedAxios.get(data);
 render(<PieChartComponent />);
 await(() => {
-  expect(screen.getByText('Confrence')).toBeInTheDocument;
+  expect(screen.getByText('Dance')).toBeInTheDocument;
 });
 });
